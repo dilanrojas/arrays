@@ -1,14 +1,21 @@
 class Main {
   public static void main(String[] args) {
-    PetManager petManager = new PetManager(12);
-    Person person = new Person("Rodolfo Arias", 29, 2, petManager);
+    Person person = new Person("Rodolfo Arias", 29, 2);
+
     Pet dog = new Pet("Venom", "Dog");
     Pet cat = new Pet("Mini", "Cat");
 
-    person.addPet(dog);
-    person.addPet(cat);
+    Pet[] pets = { dog, cat };
 
-    IOManager.printMessage("Pet's array size: " + person.getPetCount() + "\n");
+    for (Pet p : pets) {
+      if (person.addPet(p)) {
+        IOManager.printMessage("Pet " + p.getPetName() + " added successfully");
+      } else {
+        IOManager.printMessage("Failed to add pet " + p.getPetName());
+      }
+    }
+
+    IOManager.printMessage("\nPet's array size: " + person.getPetCount() + "\n");
     IOManager.printMessage(person.getPetList());
   }
 }
