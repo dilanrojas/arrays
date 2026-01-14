@@ -49,4 +49,8 @@ class Person {
   public String getPetList() {
     return this.petManager.getPetList();
   }
+
+  public boolean updatePets(Pet pet, int index) {
+    return this.petManager.updatePets(pet, index);
+  }
 }

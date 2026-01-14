@@ -30,6 +30,6 @@ class Pet {
 
   @Override
   public String toString() {
-    return "Name: " + name + "\nType: " + type;
+    return "[Name: " + name + "; Type: " + type + "]";
   }
 }

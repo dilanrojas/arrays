@@ -64,9 +64,22 @@ class PetManager {
     String list = "=== Pets list ===\n";
 
     for (Pet p : getPets()) {
-      list += p.toString() + "\n\n";
+      list += p.toString() + "\n";
     }
 
     return list;
+  }
+
+  public boolean updatePets(Pet pet, int index) {
+    if (pet == null)
+      return false;
+
+    if (index < 0 || index >= petCount)
+      return false;
+
+    if (petList[index] == pet)
+      return true;
+
+    return false;
   }
 }
