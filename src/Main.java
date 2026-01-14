@@ -15,7 +15,15 @@ class Main {
       }
     }
 
-    IOManager.printMessage("\nPet's array size: " + person.getPetCount() + "\n");
+    IOManager.printMessage("\nPet's array size: " + person.getPetCount());
     IOManager.printMessage(person.getPetList());
+
+    if (person.removePet(1)) {
+      IOManager.printMessage("Pet removed successfully");
+    } else {
+      IOManager.printMessage("Failed to remove pet");
+    }
+
+    IOManager.printMessage("\nCurrent list:\n" + person.getPetList());
   }
 }

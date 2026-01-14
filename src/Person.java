@@ -22,6 +22,10 @@ class Person {
     return petManager.addPet(pet);
   }
 
+  public boolean removePet(int index) {
+    return petManager.removePet(index);
+  }
+
   public String getName() {
     return this.name;
   }

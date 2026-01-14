@@ -24,6 +24,28 @@ class PetManager {
     return true;
   }
 
+  public boolean removePet(int index) {
+    if (index < 0 || index >= petCount)
+      return false;
+
+    petList[index] = null;
+    leftShifting(index);
+
+    return true;
+  }
+
+  public void leftShifting(int index) {
+    if (index < 0 || index >= petCount)
+      return;
+
+    for (int i = index; i < petCount - 1; i++) {
+      petList[i] = petList[i + 1];
+    }
+
+    petCount--;
+    petList[petCount] = null;
+  }
+
   public int getPetCount() {
     return petCount;
   }
