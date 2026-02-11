@@ -11,11 +11,10 @@ class Person {
 
   public Person(
       String name,
-      int age,
-      int numbersOfPets) {
+      int age) {
     this.name = name;
     this.age = age;
-    this.petManager = new PetManager(numbersOfPets);
+    this.petManager = new PetManager();
   }
 
   public boolean addPet(Pet pet) {
